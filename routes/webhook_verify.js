@@ -1,12 +1,11 @@
 const processPostback = require('../processes/postback');
 const processMessage = require('../processes/messages');
-require('dotenv').config();
-module.exports = {
-    VERIFY_TOKEN: process.env.VERIFY_TOKEN
-}
+
+
 
 module.exports = function(app, chalk) {
     app.get('/webhook', function(req, res) {
+        require('dotenv').config();
         if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN) {
             console.log('webhook verified');
             res.status(200).send(req.query['hub.challenge']);
