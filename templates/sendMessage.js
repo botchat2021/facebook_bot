@@ -1,4 +1,5 @@
 const request = require('request');
+require('dotenv').config();
 module.exports = function sendMessage(recipientId, message) {
 
     return new Promise(function(resolve, reject) {

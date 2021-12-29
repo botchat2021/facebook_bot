@@ -1,4 +1,5 @@
 const request = require('request');
+require('dotenv').config();
 module.exports = function senderAction(recipientId) {
     request({
         url: "https://graph.facebook.com/v2.6/me/messages",
