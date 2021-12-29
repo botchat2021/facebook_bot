@@ -23,7 +23,7 @@ module.exports = function processPostback(event) {
                 greeting = "Hello " + name + ". ";
             }
             let message = greeting + "Welcome to Healthbot. Hope you are       doing good today";
-            let message2 = "I am your nutrition tracker :-)"
+            let message2 = "I am your nutrition tracker :-)";
             let message3 = "please type in what you ate like: I ate chicken birayani and 2 chapatis with dal.";
             senderAction(senderID);
             sendMessage(senderID, { text: message }).then(() => {
