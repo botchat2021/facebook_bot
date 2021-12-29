@@ -2,6 +2,9 @@ const request = require('request');
 const senderAction = require('../templates/senderAction');
 const sendMessage = require('../templates/sendMessage');
 require('dotenv').config();
+module.exports = {
+    access_token: process.env.PAGE_ACCESS_TOKEN
+}
 module.exports = function processPostback(event) {
     const senderID = event.sender.id;
     const payload = event.postback.payload;

@@ -1,5 +1,8 @@
 const request = require('request');
 require('dotenv').config();
+module.exports = {
+    access_token: process.env.PAGE_ACCESS_TOKEN
+}
 module.exports = function sendMessage(recipientId, message) {
 
     return new Promise(function(resolve, reject) {
