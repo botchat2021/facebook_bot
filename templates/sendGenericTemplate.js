@@ -1,4 +1,8 @@
 const request = require('request');
+require('dotenv').config();
+module.exports = {
+    access_token: process.env.PAGE_ACCESS_TOKEN
+}
 module.exports = function sendGenericTemplate(recipientId, respBody) {
     console.log(respBody);
     const nutritionalValue = [];
