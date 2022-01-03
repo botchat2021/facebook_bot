@@ -22,15 +22,13 @@ module.exports = function processMessage(event) {
                     'content-type': 'application/json'
                 },
                 body: {
-                    text: msg
+                    text: text
                 },
                 json: true
             };
             request(options, function(error, response, body) {
                 if (error) throw new Error(error);
                 senderAction(senderID);
-
-
                 sendMessage(senderID, body);
             });
         }
