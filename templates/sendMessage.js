@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
     access_token: process.env.PAGE_ACCESS_TOKEN
 }
-module.exports = function sendMessage(recipientId, message) {
+module.exports = function sendMessage(sender_psid, received_message) {
 
     return new Promise(function(resolve, reject) {
         request({
@@ -11,8 +11,8 @@ module.exports = function sendMessage(recipientId, message) {
             qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
             method: "POST",
             json: {
-                recipient: { id: recipientId },
-                message: message,
+                recipient: { id: sender_psid },
+                message: received_message,
             }
         }, function(error, response, body) {
             if (error) {
