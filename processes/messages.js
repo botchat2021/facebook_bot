@@ -9,7 +9,7 @@ module.exports = function processMessage(sender_id, received_message) {
     if (received_message.text) {
         //create the payload for a basic the message
         response = {
-            "text": 'you sent the message: "${received_message.text}". now send me an image !!'
+            "text": `You sent the message: "${received_message.text}". Now send me an image!`
         }
     }
     sendMessage(sender_id, response);
