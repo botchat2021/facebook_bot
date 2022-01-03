@@ -1,9 +1,11 @@
 const request = require('request');
 const senderAction = require('../templates/senderAction');
 const sendMessage = require('../templates/sendMessage');
-const sendGenericTemplate = require('../templates/sendGenericTemplate');
+const botapi = require('../routes/bot_py');
 const { response } = require('express');
 module.exports = function processMessage(sender_id, received_message) {
+    botapi(received_message);
+    console.log(botapi);
     let response;
     //check if the message contains text
     if (received_message.text) {
