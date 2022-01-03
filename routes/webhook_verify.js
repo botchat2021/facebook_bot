@@ -25,7 +25,7 @@ module.exports = function(app, chalk) {
             body.entry.forEach(function(entry) {
                 //get the webhook event.entry.messaging is  an array, but will only ever 
                 //contain one event, so we get index 0
-                let webhook_event = entry.messagaing[0];
+                let webhook_event = entry.messaging[0];
                 console.log(webhook_event);
 
                 //get the sender psid 
