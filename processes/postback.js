@@ -5,9 +5,9 @@ require('dotenv').config();
 module.exports = {
     access_token: process.env.PAGE_ACCESS_TOKEN
 }
-module.exports = function processPostback(event) {
-    const senderID = event.sender.id;
-    const payload = event.postback.payload;
+module.exports = function processPostback(sender_id, recived_postback) {
+    const senderID = sender.id;
+    const payload = postback.payload;
     if (payload === 'WELCOME') {
         request({
             url: "https://graph.facebook.com/v2.6/" + senderID,
